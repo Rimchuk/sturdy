@@ -25,14 +25,14 @@ namespace QuickSort
             //i и j нужны для цикла
             int i = left;
             int j = right;
-            int x = arr[(left + right) / 2]; //Опорная arr[(last - first) / 2 + first];
+            int supportPoint = arr[(left + right) / 2]; //Опорная arr[(last - first) / 2 + first];
                                              //Цикл сортировка
 
             while (i <= j)
             {
                 //Деление на меньше и больше опорного
-                while (arr[i] < x) i++;
-                while (arr[j] > x) j--;
+                while (arr[i] < supportPoint) { i++; }
+                while (arr[j] > supportPoint) { j--; }
                 //Если i<=j:
                 if (i <= j)
                 {
@@ -47,8 +47,8 @@ namespace QuickSort
 
             }
             //Рекурсия
-            if (left < j) Sort(arr, left, j);
-            if (i < right) Sort(arr, i, right);
+            if (left < j) { Sort(arr, left, j); }
+            if (i < right) { Sort(arr, i, right); }
         }
 
     }
